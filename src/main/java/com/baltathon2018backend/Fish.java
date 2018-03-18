@@ -21,8 +21,8 @@ public class Fish {
     private String description;
     private String photoURL;
     private String curiosities;
-    @OneToMany
-    private List<Like> likes;
+//    @OneToMany
+//    private List<Like> likes;
 
 
     public Fish(String name) {

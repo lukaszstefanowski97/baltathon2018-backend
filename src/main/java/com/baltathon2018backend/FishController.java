@@ -18,8 +18,20 @@ public class FishController {
         return fish;
     }
 
-    @PostMapping("Adolf_Hitler1234")
-    public void addFish(@RequestBody Fish fish){
-        fishService.addFish(fish);
+    @PostMapping
+    public Fish addFish(@RequestBody Fish fish){
+        return fishService.addFish(fish);
+    }
+
+    @PutMapping
+    public void editFish(@RequestBody Fish fish) {
+        fishService.editFish(fish);
+    }
+
+    @PutMapping("/{fishId}/{aquariumId}")
+    public void addFishToAnotherAquarium(@PathVariable Long fishId,
+                                         @PathVariable Long aquariumId) {
+        fishService.addFishToAnotherAquarium(fishId, aquariumId);
+
     }
 }
